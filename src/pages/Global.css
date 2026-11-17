@@ -1,0 +1,247 @@
+.global-hero {
+  min-height: 560px;
+}
+
+.global {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.serif-title {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.global__head {
+  margin: 36px 0 16px;
+}
+
+.global__filters {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.global__search {
+  flex: 1;
+  min-width: 260px;
+  border-radius: 12px;
+}
+
+.global__filters .select {
+  border-radius: 12px;
+  gap: 12px;
+  font-weight: 600;
+}
+
+/* ---------- Mapa ---------- */
+.global-map {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  padding: 28px 32px;
+  background: var(--surface-soft);
+}
+
+.global-map__regions {
+  padding-left: 24px;
+  border-left: 1px solid var(--border);
+}
+
+.global-map__regions h2 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.global-map__regions ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.global-map__regions button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.global-map__regions button span {
+  flex: 1;
+}
+
+.global-map__regions button:hover,
+.global-map__regions button.is-active {
+  background: #ddd6f7;
+}
+
+/* ---------- Ícones em caixa ---------- */
+.icon-box {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+}
+
+.icon-box--red {
+  background: #f6d9d4;
+  color: var(--red);
+}
+.icon-box--blue {
+  background: #dfe6fd;
+  color: var(--blue);
+}
+.icon-box--yellow {
+  background: var(--yellow);
+  color: #c9a92a;
+}
+
+/* ---------- Panorama ---------- */
+.panorama {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.panorama__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--surface-soft);
+}
+
+.panorama__item > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.panorama__item strong {
+  font-family: var(--font-serif);
+  font-size: 26px;
+}
+
+.panorama__item small {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.panorama__delta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+}
+
+.panorama__delta b {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #ddf3e2;
+  color: #2c8a4a;
+}
+
+.panorama__delta small {
+  font-size: 10px;
+}
+
+/* ---------- Mercados / Tendências ---------- */
+.mercados {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.mercado-pais,
+.tendencia {
+  position: relative;
+  padding: 20px 22px 36px;
+  background: var(--surface-soft);
+}
+
+.mercado-pais h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.flag {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.mercado-pais p,
+.tendencia p {
+  font-size: 13px;
+  max-width: 230px;
+}
+
+.mercado-pais__arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+}
+
+.tendencias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tendencia h3 {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  margin: 14px 0 6px;
+}
+
+@media (max-width: 960px) {
+  .global-hero {
+    min-height: 0;
+  }
+
+  .global-map {
+    grid-template-columns: 1fr;
+  }
+
+  .global-map__regions {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .panorama,
+  .tendencias {
+    grid-template-columns: 1fr;
+  }
+
+  .mercados {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .mercados {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,290 @@
+.salarios {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Faixa salarial ---------- */
+.faixa {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 32px 36px 28px;
+  background: var(--surface-soft);
+}
+
+.faixa h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.faixa__filters {
+  display: flex;
+  gap: 48px;
+  margin: 10px 0 24px;
+  flex-wrap: wrap;
+}
+
+.faixa__filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.faixa__select {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: none;
+  border: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy);
+}
+
+.chart {
+  position: relative;
+  --label-w: 170px;
+}
+
+.chart__grid {
+  position: absolute;
+  top: 0;
+  bottom: 28px;
+  left: var(--label-w);
+  right: 0;
+}
+
+.chart__grid span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+.chart__row,
+.chart__axis {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 112px;
+}
+
+.chart__axis {
+  height: 28px;
+}
+
+.chart__label {
+  flex: none;
+  width: var(--label-w);
+  font-weight: 700;
+  font-size: 15px;
+  padding-left: 32px;
+}
+
+.chart__track {
+  position: relative;
+  flex: 1;
+  height: 100%;
+}
+
+.chart__axis .chart__track span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.chart__bar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 28px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.chart__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.chart__value {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ---------- Stats ---------- */
+.salarios__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 36px;
+  align-items: start;
+  margin-top: 280px;
+  padding: 0 64px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+  background: var(--surface-soft);
+}
+
+.stat__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.stat__label--blue svg {
+  color: var(--blue);
+}
+.stat__label--red svg {
+  color: var(--red);
+}
+.stat__label--yellow svg {
+  color: #e2c64a;
+}
+
+.stat strong {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.stat small {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.salarios__ctas {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.salarios__ctas .btn {
+  border-radius: 6px;
+  padding: 8px 14px;
+  justify-content: flex-start;
+}
+
+.salarios__fonte {
+  padding: 10px 64px 0;
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* ---------- Comparativo / O que ninguém conta ---------- */
+.salarios__extra {
+  display: grid;
+  gap: 12px;
+  width: 540px;
+  max-width: 100%;
+  margin: 120px 0 0 96px;
+}
+
+.salarios__extra .card {
+  padding: 24px 20px;
+  background: var(--surface-soft);
+}
+
+.salarios__extra h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.comparativo__delta {
+  margin: 12px 0;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.comparativo__delta strong {
+  font-size: 40px;
+  color: var(--red);
+  margin-right: 4px;
+}
+
+.comparativo__bar {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.comparativo__bar small {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.bar {
+  display: block;
+  height: 14px;
+  border-radius: 999px;
+  background: #dad9e3;
+  overflow: hidden;
+}
+
+.bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.ninguem ul {
+  margin: 14px 0 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+  .salarios__stats {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 48px;
+    padding: 0;
+  }
+
+  .salarios__fonte {
+    padding: 10px 0 0;
+  }
+
+  .salarios__extra {
+    margin: 48px 0 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .salarios__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .chart {
+    --label-w: 90px;
+  }
+
+  .chart__label {
+    padding-left: 0;
+  }
+
+  .chart__value {
+    display: none;
+  }
+}

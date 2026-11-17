@@ -1,0 +1,75 @@
+.petals {
+  position: absolute;
+  top: 116px;
+  right: 0;
+  width: min(42vw, 600px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.petal {
+  display: block;
+}
+
+/*
+ * Formato das pétalas (igual ao Figma):
+ * - o canto voltado pro centro é reto (0)
+ * - os dois cantos vizinhos são bem arredondados (50%)
+ * - o canto de fora tem um arredondado pequeno
+ * Ordem do border-radius: sup-esq, sup-dir, inf-dir, inf-esq
+ */
+.petal--tl {
+  border-radius: 14% 50% 0 50%;
+}
+.petal--tr {
+  border-radius: 50% 14% 50% 0;
+}
+.petal--bl {
+  border-radius: 50% 0 50% 14%;
+}
+.petal--br {
+  border-radius: 0 50% 14% 50%;
+}
+
+/* ---------- Vibrante (Home) ---------- */
+.petals--vivid .petal--tl {
+  background: #b5271b;
+  box-shadow: inset 0 14px 16px -8px rgba(60, 0, 0, 0.45);
+}
+.petals--vivid .petal--tr {
+  background: #faf2b0;
+  box-shadow: inset 6px 14px 16px -8px rgba(110, 95, 20, 0.45);
+}
+.petals--vivid .petal--bl {
+  background: #4a74f7;
+  box-shadow: inset 14px 14px 18px -10px rgba(10, 30, 120, 0.45);
+}
+.petals--vivid .petal--br {
+  background: #232a72;
+  box-shadow: inset -10px 14px 18px -8px rgba(0, 0, 30, 0.55);
+}
+
+/* ---------- Suave (demais telas) ---------- */
+.petals--soft .petal--tl {
+  background: #dba3a3;
+}
+.petals--soft .petal--tr {
+  background: #f6f0dc;
+}
+.petals--soft .petal--bl {
+  background: #aebcfb;
+}
+.petals--soft .petal--br {
+  background: #a1a0c6;
+}
+
+@media (max-width: 860px) {
+  .petals {
+    width: 48vw;
+    opacity: 0.45;
+  }
+}

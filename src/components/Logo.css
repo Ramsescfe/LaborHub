@@ -1,0 +1,14 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.logo--lg {
+  font-size: 40px;
+}

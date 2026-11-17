@@ -1,0 +1,269 @@
+.home-hero {
+  position: relative;
+  z-index: 1;
+  padding-top: 190px;
+  min-height: 640px;
+}
+
+.home-hero .page-title {
+  font-size: clamp(40px, 4.8vw, 64px);
+}
+
+.home-hero__actions {
+  display: flex;
+  gap: 24px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.home-section {
+  position: relative;
+  z-index: 1;
+  margin-top: 56px;
+}
+
+.home-section__sub {
+  margin-top: 4px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+/* ---------- Áreas de destaque ---------- */
+.areas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 68px;
+}
+
+.area-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 16px;
+  padding: 26px 22px;
+  min-height: 200px;
+}
+
+.area-card h3 {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.area-card p {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 220px;
+}
+
+.area-card__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+}
+
+.area-card__trend {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.area-card__blob {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 150px;
+  height: 110px;
+  border-radius: 100% 0 0 0;
+}
+
+.area-card--navy .area-card__icon,
+.area-card--navy .area-card__trend {
+  background: #dcdcef;
+  color: var(--navy);
+}
+.area-card--navy .area-card__blob {
+  background: #686a9f;
+}
+
+.area-card--red .area-card__icon,
+.area-card--red .area-card__trend {
+  background: #f3d4cf;
+  color: var(--red);
+}
+.area-card--red .area-card__blob {
+  background: #c9655a;
+}
+
+.area-card--yellow .area-card__icon,
+.area-card--yellow .area-card__trend {
+  background: var(--yellow-soft);
+  color: #d8c35d;
+}
+.area-card--yellow .area-card__blob {
+  background: var(--yellow);
+}
+
+/* ---------- Oportunidades ---------- */
+.oportunidades {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 32px 64px 40px 72px;
+  color: #fff;
+}
+
+.oportunidades__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.oportunidades__head h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--yellow);
+}
+
+.oportunidades__link {
+  color: #fff;
+}
+
+.oportunidades__body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.oportunidades__map {
+  padding-right: 24px;
+  border-right: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.oportunidades__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 50px;
+}
+
+.pais-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 360px;
+  max-width: 100%;
+  padding: 14px 20px;
+  background: var(--bg);
+  border-radius: 14px;
+  color: var(--red);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s;
+}
+
+.pais-card:hover {
+  transform: translateX(4px);
+}
+
+.pais-card > span:nth-child(2) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pais-card strong {
+  font-family: var(--font-serif);
+  font-size: 18px;
+}
+
+.pais-card small {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.pais-card__arrow {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: #ddd8ee;
+  color: var(--navy);
+}
+
+/* ---------- De olho no mercado ---------- */
+.mercado {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 110px;
+  padding: 0 12px;
+}
+
+.mercado-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 28px 46px;
+  min-height: 160px;
+  background: var(--yellow);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.mercado-card h3 {
+  font-size: 22px;
+}
+
+.mercado-card p {
+  font-size: 14px;
+  max-width: 280px;
+}
+
+.mercado-card__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: #e88a7c;
+  color: var(--red);
+}
+
+@media (max-width: 960px) {
+  .areas,
+  .mercado {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .oportunidades {
+    padding: 24px;
+  }
+
+  .oportunidades__body {
+    grid-template-columns: 1fr;
+  }
+
+  .oportunidades__map {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .oportunidades__list {
+    gap: 16px;
+  }
+
+  .home-hero {
+    min-height: 0;
+  }
+}
